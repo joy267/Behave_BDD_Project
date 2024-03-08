@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 
 @given(u'I get navigated to Home page')
 def homepage(context):
-    context.driver = webdriver.Chrome()
-    context.driver.maximize_window()
-    context.driver.get("https://tutorialsninja.com/demo/")
+
+    expected_title = "Your Store"
+    assert context.driver.title.__eq__(expected_title)
 
 
 @when(u'I enter a valid product in the search box field')
